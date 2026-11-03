@@ -7,8 +7,10 @@
 
 #define ADDR "127.0.0.4"
 #define PORT 8080
+#define BUFFER_SIZE 80
 
 int main(){
+	char buf[BUFFER_SIZE];
 	socklen_t lenaddr = sizeof(ADDR);
 	struct sockaddr_in client_addr;
 
@@ -26,8 +28,8 @@ int main(){
 	}
 
 	write(client_socket, "123", 4);
-
-
+	read(client_socket, buf, BUFFER_SIZE-1);
+	printf("Echo: %s\n", buf);	
 	close(client_socket);
 
 	return 0;

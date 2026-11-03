@@ -49,9 +49,7 @@ int main(){
 
 	}
 
-
 	close(server_socket);
-	printf("Buffer: %s\n:", buf);
 
 }
 	
