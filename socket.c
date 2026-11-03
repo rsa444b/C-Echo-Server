@@ -42,8 +42,11 @@ int main(){
 		return 1;
 	}
 
+	while (1){
 
-	recv(client_socket, buf, BUFFER_SIZE,0);
+	read(client_socket, buf, BUFFER_SIZE);
+	write(client_socket, buf, strlen(buf)+1);	
+	}
 
 
 	close(server_socket);
