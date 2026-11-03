@@ -41,10 +41,12 @@ int main(){
 		return 1;
 	}
 
-	while (1){
+
+	while (1) {
 
 	read(client_socket, buf, BUFFER_SIZE);
 	write(client_socket, buf, strlen(buf)+1);	
+
 	}
 
 
